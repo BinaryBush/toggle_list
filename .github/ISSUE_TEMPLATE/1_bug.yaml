@@ -1,0 +1,35 @@
+name: Bug Report
+description: File a bug report
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Thank you for filling out this bug report!
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      description: Please tell us, what was the intended behaviour?
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What did actually happen?
+      description: Please tell us, what went wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: enviroment
+    attributes:
+      label: Help us recreate the bug.
+      description: > 
+        Please send us all required information the recreate the bug,
+        such as the versions of Dart and Flutter you are using
+        as well as the code surronding the bug. 
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Your help is highly appreciated, thank you!

@@ -1,0 +1,28 @@
+name: Feature request
+description: File a request for new feature.
+labels: ["new-feature"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for filling out this feature request form!
+  - type: input
+    id: motivation
+    attributes:
+      label: What is the new feature's essence?
+      description: Please tell us in one sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        To help us understand your suggestion, please try to answer the following questions:
+        * Why is it needed?
+        * Is it an enhancement? Or a new interface? Or a faster inner logic?
+        * What are the details?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Your help is highly appreciated, thank you!

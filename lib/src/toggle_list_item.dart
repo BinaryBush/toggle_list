@@ -29,6 +29,12 @@ class ToggleListItem extends StatefulWidget {
   /// - item is expanded.
   final Decoration? expandedHeaderDecoration;
 
+  /// The middle component of the expanded header.
+  ///
+  /// If not set, the title of an expanded item
+  /// is defined by the [title] widget.
+  final Widget? expandedTitle;
+
   /// The decoration of this item's header.
   ///
   /// Used when
@@ -69,6 +75,7 @@ class ToggleListItem extends StatefulWidget {
     required this.content,
     required this.title,
     this.expandedHeaderDecoration,
+    this.expandedTitle,
     this.headerDecoration = const BoxDecoration(),
     this.itemDecoration = const BoxDecoration(),
     this.isInitiallyExpanded = false,
@@ -179,7 +186,11 @@ class _ToggleListItemState extends State<ToggleListItem>
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       widget.leading,
-                      Expanded(child: widget.title),
+                      _isExpanded
+                          ? Expanded(
+                              child: widget.expandedTitle ?? widget.title,
+                            )
+                          : Expanded(child: widget.title),
                       _buildTrailing(context),
                     ],
                   ),

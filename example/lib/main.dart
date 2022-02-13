@@ -170,11 +170,11 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
     );
   }
 
-  void _expansionChangedCallback(bool b) {
+  void _expansionChangedCallback(int index, bool newValue) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          'Changed expansion status to ${b ? "expanded" : "shrunk"}.',
+          'Changed expansion status of item  no.${index + 1} to ${newValue ? "expanded" : "shrunk"}.',
         ),
       ),
     );

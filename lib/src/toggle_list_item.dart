@@ -47,9 +47,15 @@ class ToggleListItem extends StatefulWidget {
 
   /// A function which is called when this item's toggle state has changed.
   ///
+  /// When specifying a single callback to be used by each and every item of
+  /// the list (for example, populating the list with a generator or other build
+  /// function) it is useful to know which item's state has changed. Thus the
+  /// callback provides the index of the changed item as well as the flag
+  /// that represents expandedness.
+  ///
   /// The function should not change the item itself,
   /// as it would trigger a rebuild that leads to performance issues.
-  final ValueChanged<bool>? onExpansionChanged;
+  final Function(int index, bool newValue)? onExpansionChanged;
 
   /// A unique identifier of this item.
   ///
@@ -236,6 +242,7 @@ class _ToggleListItemState extends State<ToggleListItem>
       }
       PageStorage.of(context)?.writeState(context, _isExpanded);
     });
-    if (didExpansionChange) widget.onExpansionChanged?.call(_isExpanded);
+    var index = ToggleListData.of(context).children.indexOf(widget);
+    if (didExpansionChange) widget.onExpansionChanged?.call(index, _isExpanded);
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:toggle_list/src/toggle_list_controller.dart';
@@ -34,7 +36,7 @@ class ToggleListData extends InheritedWidget {
 
   static ToggleListData of(BuildContext context) {
     var result = context.dependOnInheritedWidgetOfExactType<ToggleListData>();
-    assert(result != null, 'No ToggleListData found in context.');
+    assert(result != null, 'No ToggleListData widget found in context.');
     return result!;
   }
 

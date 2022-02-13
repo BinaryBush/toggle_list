@@ -12,5 +12,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Documentation of ToggleList class
 - Documentation of ToggleListItem class
 - Documentation of ToggleListController class
-- Documentation od Section enum
+- Documentation of Section enum
 - Example app

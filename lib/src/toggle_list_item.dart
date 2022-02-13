@@ -32,7 +32,7 @@ class ToggleListItem extends StatefulWidget {
   /// The decoration of this item's header.
   ///
   /// Used when
-  /// - item is shurnk,
+  /// - item is shrunk,
   /// - item is expanded and [expandedHeaderDecoration] is not set.
   final Decoration headerDecoration;
 

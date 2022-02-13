@@ -69,7 +69,7 @@ Contributions of any kind are always welcome!
 As of now, we don't have a standardized way for contributions. For this reason, if you would like to help us with your coding, feel free to send an email to [contact@binarybush.dev](mailto:contact@binarybush.dev).
 
 ## Metadata
-:green_book: [Doucumentation](https://pub.dev/documentation/toggle_list/latest/). 
+:green_book: [Documentation](https://pub.dev/documentation/toggle_list/latest/)
 
 :email: [contact@binarybush.dev](mailto:contact@binarybush.dev)
 

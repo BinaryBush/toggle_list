@@ -29,15 +29,6 @@ class ToggleList extends StatefulWidget {
   /// If [trailingExpanded] is set this is ignored.
   final bool flipTrailingOnToggle;
 
-  /// The duration of the animation with which the item is
-  /// expanded and shurnk.
-  final Duration toggleAnimationDuration;
-
-  /// Item closing policy for the list.
-  ///
-  /// See [Sections] for more details on the policies.
-  final Sections sectionsLeftExpanded;
-
   /// The direction in which the list can be scrolled.
   final Axis scrollDirection;
 
@@ -45,12 +36,17 @@ class ToggleList extends StatefulWidget {
   /// scrolled to its position when expanded.
   final Duration scrollDuration;
 
+  /// The scrolling physics determine how the list responds to scrolling.
+  final ScrollPhysics scrollPhysics;
+
   /// The end position of the animation in which the item is
   /// scrolled to its position when expanded.
   final AutoScrollPosition scrollPosition;
 
-  /// The scrolling physics determine how the list responds to scrolling.
-  final ScrollPhysics scrollPhysics;
+  /// Item closing policy for the list.
+  ///
+  /// See [Sections] for more details on the policies.
+  final Sections sectionsLeftExpanded;
 
   /// Specifies whether the list should shrink wrap.
   ///
@@ -59,6 +55,10 @@ class ToggleList extends StatefulWidget {
   /// If set to `false` the list will expand to the maximum size allowed
   /// in the [scrollDirection].
   final bool shrinkWrap;
+
+  /// The duration of the animation with which the item is
+  /// expanded and shurnk.
+  final Duration toggleAnimationDuration;
 
   /// The rightmost component of the header.
   ///

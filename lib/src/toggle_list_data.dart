@@ -12,10 +12,10 @@ class ToggleListData extends InheritedWidget {
   final Curve curve;
   final bool flipTrailingOnToggle;
   final ToggleListController listController;
-  final Duration toggleAnimationDuration;
   final AutoScrollController scrollController;
   final Duration scrollDuration;
   final AutoScrollPosition scrollPosition;
+  final Duration toggleAnimationDuration;
   final Widget trailing;
   final Widget? trailingExpanded;
 
@@ -46,10 +46,10 @@ class ToggleListData extends InheritedWidget {
         curve != oldWidget.curve ||
         flipTrailingOnToggle != oldWidget.flipTrailingOnToggle ||
         listController != oldWidget.listController ||
-        toggleAnimationDuration != oldWidget.toggleAnimationDuration ||
         scrollController != oldWidget.scrollController ||
         scrollDuration != oldWidget.scrollDuration ||
         scrollPosition != oldWidget.scrollPosition ||
+        toggleAnimationDuration != oldWidget.toggleAnimationDuration ||
         trailing != oldWidget.trailing ||
         trailingExpanded != oldWidget.trailingExpanded);
   }

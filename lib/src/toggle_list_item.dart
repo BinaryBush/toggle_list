@@ -42,11 +42,11 @@ class ToggleListItem extends StatefulWidget {
   /// - item is expanded and [expandedHeaderDecoration] is not set.
   final Decoration headerDecoration;
 
-  /// The decoration of this item.
-  final Decoration itemDecoration;
-
   /// The initial status of this item.
   final bool isInitiallyExpanded;
+
+  /// The decoration of this item.
+  final Decoration itemDecoration;
 
   /// The leftmost component of the header.
   final Widget leading;

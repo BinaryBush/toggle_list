@@ -63,14 +63,8 @@ class ToggleListItem extends StatefulWidget {
   /// as it would trigger a rebuild that leads to performance issues.
   final Function(int index, bool newValue)? onExpansionChanged;
 
-  /// A unique identifier of this item.
-  ///
-  /// Used in [ToggleListController]'s functions
-  /// to identify the calling [ToggleListItem] and supervising its state.
-  late final UniqueKey uniqueKey;
-
   /// Contructs a list item to be used as a child of a [ToggleList].
-  ToggleListItem({
+  const ToggleListItem({
     Key? key,
     required this.content,
     required this.title,
@@ -81,9 +75,7 @@ class ToggleListItem extends StatefulWidget {
     this.isInitiallyExpanded = false,
     this.leading = const SizedBox(width: 0),
     this.onExpansionChanged,
-  }) : super(key: key) {
-    uniqueKey = UniqueKey();
-  }
+  }) : super(key: key);
 
   @override
   State<ToggleListItem> createState() => _ToggleListItemState();
@@ -92,7 +84,7 @@ class ToggleListItem extends StatefulWidget {
 /// The state of a [ToggleListItem],
 /// that stores whether it is expanded and handles it's animations.
 class _ToggleListItemState extends State<ToggleListItem>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, AutomaticKeepAliveClientMixin {
   /// A simple animation later used as a 180° turn in [trailingAnimation].
   static final Animatable<double> _halfTween =
       Tween<double>(begin: 0, end: 0.5);
@@ -114,11 +106,21 @@ class _ToggleListItemState extends State<ToggleListItem>
   /// with the curve specified by the user in [ToggleList.curve].
   late Animation<double> _trailingAnimation;
 
+  /// A unique identifier of this item.
+  ///
+  /// Used in [ToggleListController]'s functions
+  /// to identify the calling [ToggleListItem] and supervising its state.
+  late final UniqueKey _uniqueKey;
+
   ///The status of this item.
   late bool _isExpanded;
 
   @override
+  bool get wantKeepAlive => _isExpanded;
+
+  @override
   void initState() {
+    _uniqueKey = UniqueKey();
     _isExpanded = PageStorage.of(context)?.readState(context) as bool? ??
         widget.isInitiallyExpanded;
     super.initState();
@@ -153,6 +155,7 @@ class _ToggleListItemState extends State<ToggleListItem>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return AnimatedBuilder(
       animation: _animationController!.view,
       builder: _buildItem,
@@ -165,7 +168,7 @@ class _ToggleListItemState extends State<ToggleListItem>
     var index = data.children.indexOf(widget);
     return Center(
       child: AutoScrollTag(
-        key: widget.uniqueKey,
+        key: _uniqueKey,
         controller: data.scrollController,
         index: index,
         child: Container(
@@ -232,11 +235,11 @@ class _ToggleListItemState extends State<ToggleListItem>
         preferPosition: data.scrollPosition,
       );
     }
-    data.listController.updateItem(widget.uniqueKey);
+    data.listController.updateItem(_uniqueKey);
   }
 
   void itemStateListener() {
-    var isExpanding = _listController!.checkIfExpanded(widget.uniqueKey);
+    var isExpanding = _listController!.checkIfExpanded(_uniqueKey);
     var didExpansionChange = isExpanding != _isExpanded;
     if (!mounted) return;
     setState(() {

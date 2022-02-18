@@ -112,7 +112,7 @@ class _ToggleListItemState extends State<ToggleListItem>
   /// to identify the calling [ToggleListItem] and supervising its state.
   late final UniqueKey _uniqueKey;
 
-  ///The status of this item.
+  /// The status of this item.
   late bool _isExpanded;
 
   @override
@@ -202,7 +202,6 @@ class _ToggleListItemState extends State<ToggleListItem>
               ClipRect(
                 child: Align(
                   heightFactor: _heightAnimation.value,
-                  //widthFactor: _heightAnimation.value,
                   child: child,
                 ),
               ),

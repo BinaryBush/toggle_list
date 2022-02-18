@@ -143,13 +143,14 @@ class _ToggleListState extends State<ToggleList> {
       controller: _scrollController,
       interactive: true,
       isAlwaysShown: false,
-      child: ListView.builder(
+      child: ListView.separated(
         cacheExtent: MediaQuery.of(context).size.height * 2,
         controller: _scrollController,
         itemCount: widget.children.length,
         scrollDirection: widget.scrollDirection,
         physics: widget.scrollPhysics,
         shrinkWrap: widget.shrinkWrap,
+        separatorBuilder: (context, index) => widget.divider,
         itemBuilder: (context, index) {
           return Column(
             children: [
@@ -166,7 +167,6 @@ class _ToggleListState extends State<ToggleList> {
                 trailing: widget.trailing,
                 trailingExpanded: widget.trailingExpanded,
               ),
-              if (widget.children.length - 1 != index) widget.divider,
             ],
           );
         },

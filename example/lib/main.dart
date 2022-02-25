@@ -40,7 +40,7 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
         backgroundColor: appColor,
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: ToggleList(
           divider: const SizedBox(height: 10),
           toggleAnimationDuration: const Duration(milliseconds: 400),

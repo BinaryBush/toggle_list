@@ -155,7 +155,7 @@ class _ToggleListState extends State<ToggleList> {
     return Scrollbar(
       controller: _scrollController,
       interactive: true,
-      isAlwaysShown: false,
+      thumbVisibility: false,
       child: Padding(
         padding: widget.innerPadding,
         child: ListView.separated(

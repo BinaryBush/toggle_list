@@ -1,6 +1,6 @@
 name: toggle_list
 description: An easy-to-use and highly customizable expandable list widget for your Flutter application.
-version: 0.2.1
+version: 0.3.0
 homepage: https://binarybush.dev/
 repository: https://github.com/binarybush/toggle_list 
 issue_tracker: https://github.com/binarybush/toggle_list/issues

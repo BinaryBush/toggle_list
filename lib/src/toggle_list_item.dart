@@ -121,7 +121,7 @@ class _ToggleListItemState extends State<ToggleListItem>
   @override
   void initState() {
     _uniqueKey = UniqueKey();
-    _isExpanded = PageStorage.of(context)?.readState(context) as bool? ??
+    _isExpanded = PageStorage.of(context).readState(context) as bool? ??
         widget.isInitiallyExpanded;
     super.initState();
   }
@@ -253,7 +253,7 @@ class _ToggleListItemState extends State<ToggleListItem>
           },
         );
       }
-      PageStorage.of(context)?.writeState(context, _isExpanded);
+      PageStorage.of(context).writeState(context, _isExpanded);
     });
     var index = ToggleListData.of(context).children.indexOf(widget);
     if (didExpansionChange) widget.onExpansionChanged?.call(index, _isExpanded);

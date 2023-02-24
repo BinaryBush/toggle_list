@@ -23,6 +23,12 @@ class ToggleListItem extends StatefulWidget {
   /// It is located between the [leading] and the [ToggleListData.trailing].
   final Widget title;
 
+  /// The component between title and content.
+  ///
+  /// Separates [title] from [content] visually.
+  /// Only visible when [_ToggleListItemState._isExpanded] is `true`.
+  final Widget divider;
+
   /// The decoration of this item's header.
   ///
   /// Used when
@@ -68,6 +74,7 @@ class ToggleListItem extends StatefulWidget {
     Key? key,
     required this.content,
     required this.title,
+    this.divider = const SizedBox(height: 0),
     this.expandedHeaderDecoration,
     this.expandedTitle,
     this.headerDecoration = const BoxDecoration(),
@@ -199,12 +206,18 @@ class _ToggleListItemState extends State<ToggleListItem>
                   ),
                 ),
               ),
-              ClipRect(
-                child: Align(
-                  heightFactor: _heightAnimation.value,
-                  child: child,
+              if (child != null)
+                ClipRect(
+                  child: Align(
+                    heightFactor: _heightAnimation.value,
+                    child: Column(
+                      children: [
+                        widget.divider,
+                        child,
+                      ],
+                    ),
+                  ),
                 ),
-              ),
             ],
           ),
         ),

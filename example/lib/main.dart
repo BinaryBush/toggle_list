@@ -75,6 +75,11 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
                   ],
                 ),
               ),
+              divider: const Divider(
+                color: Colors.white,
+                height: 2,
+                thickness: 2,
+              ),
               content: Container(
                 margin: const EdgeInsets.only(bottom: 10),
                 padding: const EdgeInsets.all(10),

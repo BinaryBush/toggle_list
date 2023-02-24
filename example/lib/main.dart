@@ -65,12 +65,12 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
                       'Hiding a square inside:',
                       style: Theme.of(context)
                           .textTheme
-                          .headline6!
+                          .titleLarge!
                           .copyWith(fontSize: 17),
                     ),
                     Text(
                       '$index^2',
-                      style: Theme.of(context).textTheme.bodyText2,
+                      style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ],
                 ),
@@ -89,14 +89,14 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
                   children: [
                     Text(
                       '$index^2 is ${index * index}',
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     const SizedBox(
                       height: 8,
                     ),
                     Text(
                       'Properties of n^2:\nGeometric figure: parabola\nRoot: n=0\nDiscriminant: Δ = 0\nParity: even',
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     const SizedBox(
                       height: 8,

@@ -38,7 +38,7 @@ class ToggleListController extends ChangeNotifier {
   }
 
   /// Returns the expansion status of an item.
-  bool checkIfExpanded(UniqueKey key) {
+  bool isItemExpanded(UniqueKey key) {
     return expandedItems.contains(key);
   }
 }

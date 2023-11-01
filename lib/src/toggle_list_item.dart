@@ -254,7 +254,7 @@ class _ToggleListItemState extends State<ToggleListItem>
   }
 
   void itemStateListener() {
-    var isExpanding = _listController!.checkIfExpanded(_uniqueKey);
+    var isExpanding = _listController!.isItemExpanded(_uniqueKey);
     var didExpansionChange = isExpanding != _isExpanded;
     if (!mounted) return;
     setState(() {

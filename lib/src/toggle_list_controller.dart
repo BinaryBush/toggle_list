@@ -29,6 +29,14 @@ class ToggleListController extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Sets the initial state of the item to expanded.
+  void setInitiallyExpandedItem(UniqueKey key) {
+    expandedItems.add(key);
+    if (sectionsLeftExpanded == Sections.last) {
+      expandedItems.removeRange(0, expandedItems.length - 1);
+    }
+  }
+
   /// Returns the expansion status of an item.
   bool checkIfExpanded(UniqueKey key) {
     return expandedItems.contains(key);

@@ -137,6 +137,9 @@ class _ToggleListItemState extends State<ToggleListItem>
   void didChangeDependencies() {
     var data = ToggleListData.of(context);
     _listController ??= data.listController;
+    if (widget.isInitiallyExpanded) {
+      _listController!.setInitiallyExpandedItem(_uniqueKey);
+    }
     _listController!.addListener(itemStateListener);
     _animationController ??= AnimationController(
       duration: data.toggleAnimationDuration,

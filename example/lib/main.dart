@@ -118,8 +118,8 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
                       children: [
                         TextButton(
                           onPressed: () {},
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(Icons.add),
                               Padding(
                                 padding: EdgeInsets.symmetric(vertical: 2.0),
@@ -130,8 +130,8 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(Icons.edit),
                               Padding(
                                 padding: EdgeInsets.symmetric(vertical: 2.0),
@@ -142,8 +142,8 @@ class _ExampleAppPageState extends State<ExampleAppPage> {
                         ),
                         TextButton(
                           onPressed: () {},
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Icon(Icons.save),
                               Padding(
                                 padding: EdgeInsets.symmetric(vertical: 2.0),

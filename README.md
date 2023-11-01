@@ -21,7 +21,7 @@ flutter pub add toggle_list
 Add the following line to your pubspec.yaml file.
 ```yaml
 dependencies:
-  toggle_list: ^0.1.0
+  toggle_list: ^0.3.1
 ```
 Then either save the file or use the `flutter pub run` command.
 

@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.1] - 2023-11-01
+### Fixed
+- Bug where initially expanded item would only shrunk on second tap
+### Changed
+- Bump version of flutter_lints to 3.0.0 
+- SDK upper constraint to accept 3.x versions
+- Example app according to the relevant changes
+
+
 ## [0.3.0] - 2023-03-24
 ### Added
 - Divider property of ToggleListItem
@@ -13,6 +22,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 - Text types of TextTheme according to Material3 guidelines introduced in Flutter 3.7
 - Bump the example app's Gradle version from 6.7 to 7.3.3
+
 
 ## [0.2.1] - 2022-05-20
 ### Fixed
